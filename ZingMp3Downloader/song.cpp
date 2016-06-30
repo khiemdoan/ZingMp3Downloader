@@ -2,7 +2,7 @@
 
 bool Song::verifyLink(std::string sUrl) {
 	std::string	sId;
-	std::regex id_regex("http:\\/\\/mp3.zing.vn\\/bai-hat\\/[\\w-]+\\/ZW\\w{6}.html");
+	std::regex id_regex("(http:\\/\\/)?(m.)?mp3\\.zing\\.vn\\/bai-hat\\/[\\w-]+\\/ZW\\w{6}\\.html?");
 	std::smatch id_match;
 	if (std::regex_match(sUrl, id_match, id_regex)) {
 		return true;
