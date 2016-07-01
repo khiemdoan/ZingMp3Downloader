@@ -117,6 +117,9 @@
     <ClInclude Include="jsoncpp\json-forwards.h">
       <Filter>jsoncpp</Filter>
     </ClInclude>
+    <ClInclude Include="dkstd_string.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ZingMp3Downloader.rc" />

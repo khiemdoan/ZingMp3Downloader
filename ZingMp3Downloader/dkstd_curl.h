@@ -7,7 +7,10 @@
 
 #define CURL_STATICLIB
 #include "curl/curl.h"
-#pragma comment(lib, "curl/libcurl_a.lib")
+#pragma comment (lib, "curl/libcurl_a.lib")
+#pragma comment (linker, "/NODEFAULTLIB:libcmt.lib")
+
+#include "dkstd_string.h"
 
 namespace dkstd
 {
@@ -22,6 +25,7 @@ namespace dkstd
 		void set_url(std::string sUrl);
 		bool send_request();
 		std::string get_content();
+		bool download_to_file(std::wstring file_path);
 		bool download_to_file(std::string file_path);
 		std::string get_redirect();
 
@@ -117,14 +121,14 @@ inline std::string dkstd::curl::get_content()
 	return m_sContent;
 }
 
-inline bool dkstd::curl::download_to_file(std::string file_path)
+inline bool dkstd::curl::download_to_file(std::wstring file_path)
 {
 	CURL				*curl_handle = nullptr;
 	struct curl_slist	*chunk = NULL;
 	CURLcode			res = CURLE_OK;
 	bool				bReturn = false;
 
-	m_sContent = file_path;
+	m_sContent = dkstd::ws2s(file_path);
 	std::ofstream file(file_path, std::fstream::out | std::fstream::binary);
 
 	if (file.good() == true) {
@@ -159,6 +163,11 @@ inline bool dkstd::curl::download_to_file(std::string file_path)
 	}
 
 	return bReturn;
+}
+
+inline bool dkstd::curl::download_to_file(std::string file_path)
+{
+	return download_to_file(dkstd::s2ws(file_path));
 }
 
 inline std::string dkstd::curl::get_redirect()

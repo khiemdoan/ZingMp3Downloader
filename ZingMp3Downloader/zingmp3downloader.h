@@ -8,6 +8,7 @@
 #include <QMediaPlayer.h>
 
 #include "song.h"
+#include "dkstd_string.h"
 
 class ZingMp3Downloader : public QMainWindow
 {
@@ -28,7 +29,7 @@ private:
 	QMediaPlayer *player = nullptr;
 
 private slots:
-	void on_btnCheck_clicked();
+	void on_btnGetData_clicked();
 	void on_btnPlay_clicked();
 	void on_btnDownload128_clicked();
 	void on_btnDownload320_clicked();

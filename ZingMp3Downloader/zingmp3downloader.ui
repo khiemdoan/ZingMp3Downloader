@@ -30,9 +30,9 @@
         <widget class="QLineEdit" name="lineEditUrl"/>
        </item>
        <item>
-        <widget class="QPushButton" name="btnCheck">
+        <widget class="QPushButton" name="btnGetData">
          <property name="text">
-          <string>Check</string>
+          <string>Get Data</string>
          </property>
         </widget>
        </item>

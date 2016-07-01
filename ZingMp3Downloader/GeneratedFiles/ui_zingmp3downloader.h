@@ -32,7 +32,7 @@ public:
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLineEdit *lineEditUrl;
-    QPushButton *btnCheck;
+    QPushButton *btnGetData;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer;
     QPushButton *btnPlay;
@@ -67,10 +67,10 @@ public:
 
         horizontalLayout->addWidget(lineEditUrl);
 
-        btnCheck = new QPushButton(verticalLayoutWidget);
-        btnCheck->setObjectName(QStringLiteral("btnCheck"));
+        btnGetData = new QPushButton(verticalLayoutWidget);
+        btnGetData->setObjectName(QStringLiteral("btnGetData"));
 
-        horizontalLayout->addWidget(btnCheck);
+        horizontalLayout->addWidget(btnGetData);
 
 
         verticalLayout->addLayout(horizontalLayout);
@@ -135,7 +135,7 @@ public:
     void retranslateUi(QMainWindow *ZingMp3DownloaderClass)
     {
         ZingMp3DownloaderClass->setWindowTitle(QApplication::translate("ZingMp3DownloaderClass", "ZingMp3Downloader - KhiemDH", 0));
-        btnCheck->setText(QApplication::translate("ZingMp3DownloaderClass", "Check", 0));
+        btnGetData->setText(QApplication::translate("ZingMp3DownloaderClass", "Get Data", 0));
         btnPlay->setText(QApplication::translate("ZingMp3DownloaderClass", "Play", 0));
         btnDownload128->setText(QApplication::translate("ZingMp3DownloaderClass", "128", 0));
         btnDownload320->setText(QApplication::translate("ZingMp3DownloaderClass", "320", 0));

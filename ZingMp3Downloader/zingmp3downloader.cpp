@@ -4,7 +4,7 @@ ZingMp3Downloader::ZingMp3Downloader(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
-	connect(ui.btnCheck, SIGNAL(release()), this, SLOT(on_btnCheck_clicked()));
+	connect(ui.btnGetData, SIGNAL(release()), this, SLOT(on_btnGetData_clicked()));
 	connect(ui.btnDownload128, SIGNAL(release()), this, SLOT(on_btnDownload128_clicked()));
 	connect(ui.btnDownload320, SIGNAL(release()), this, SLOT(on_btnDownload320_clicked()));
 	connect(ui.btnDownloadLossless, SIGNAL(release()), this, SLOT(on_btnDownloadLossless_clicked()));
@@ -36,7 +36,7 @@ void ZingMp3Downloader::displayInfo(std::string content)
 	msgBox.exec();
 }
 
-void ZingMp3Downloader::on_btnCheck_clicked()
+void ZingMp3Downloader::on_btnGetData_clicked()
 {
 	ui.btnPlay->setEnabled(false);
 	ui.btnDownload128->setEnabled(false);
@@ -82,6 +82,8 @@ void ZingMp3Downloader::on_btnCheck_clicked()
 	if (m_song.isHasLossless()) {
 		ui.btnDownloadLossless->setEnabled(true);
 	}
+
+	displayInfo("Lấy dữ liệu thành công!");
 }
 
 void ZingMp3Downloader::on_btnPlay_clicked()

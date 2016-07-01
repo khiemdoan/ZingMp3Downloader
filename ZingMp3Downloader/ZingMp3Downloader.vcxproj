@@ -131,6 +131,7 @@
     <ClInclude Include="curl\stdcheaders.h" />
     <ClInclude Include="curl\typecheck-gcc.h" />
     <ClInclude Include="dkstd_curl.h" />
+    <ClInclude Include="dkstd_string.h" />
     <ClInclude Include="GeneratedFiles\ui_zingmp3downloader.h" />
     <ClInclude Include="jsoncpp\json-forwards.h" />
     <ClInclude Include="jsoncpp\json.h" />
